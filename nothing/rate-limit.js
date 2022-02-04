@@ -156,9 +156,9 @@ function get429Page (message) {
 }
 
 export default fp(rateLimit, {
-  name: 'rateLimit',
+  name: 'rateLimit'
   // This plugin needs a working Elasticsearch connection
   // to be able to work, so we declare its dependency on the
   // `elasticsearch` plugin we have previously created.
-  dependencies: ['elasticsearch']
+  // dependencies: ['elasticsearch']
 })

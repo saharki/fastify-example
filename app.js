@@ -24,10 +24,10 @@ export default async function (fastify, opts) {
       .prop('NODE_ENV', S.string().required())
       .prop('ELASTIC_CLOUD_ID', S.string())
       .prop('ELASTIC_ADDRESS', S.string())
-      .prop('ELASTIC_API_KEY', S.string().required())
-      .prop('GITHUB_APP_ID', S.string().required())
-      .prop('GITHUB_APP_SECRET', S.string().required())
-      .prop('COOKIE_SECRET', S.string().required())
+      .prop('ELASTIC_API_KEY', S.string())
+      .prop('GITHUB_APP_ID', S.string())
+      .prop('GITHUB_APP_SECRET', S.string())
+      .prop('COOKIE_SECRET', S.string())
       .prop('ALLOWED_USERS', S.string().required())
       .valueOf()
   })
@@ -51,9 +51,7 @@ export default async function (fastify, opts) {
 
   // Enables the use of CORS in a Fastify application.
   // https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
-  fastify.register(Cors, {
-    origin: false
-  })
+  fastify.register(Cors)
 
   // Normally you would need to load by hand each plugin. `fastify-autoload` is an utility
   // we wrote to solve this specific problems. It loads all the content from the specified

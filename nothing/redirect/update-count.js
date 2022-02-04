@@ -73,6 +73,6 @@ async function updateCount (fastify, opts) {
 }
 
 export default fp(updateCount, {
-  name: 'update-count',
-  dependencies: ['elasticsearch']
+  name: 'update-count'
+  // dependencies: ['elasticsearch']
 })
